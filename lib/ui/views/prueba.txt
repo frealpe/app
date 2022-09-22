@@ -1,0 +1,74 @@
+WhiteCard(
+     
+      title: 'Información general',
+      child: Form(
+        key: productoFormProvider.formKey,
+        autovalidateMode: AutovalidateMode.always,
+        child: Column(
+            //TODO PENSAR EN FILAS Y COLUMNAS
+          children: [
+////////////////////////////////////////////////////////////////////////////////////////////
+            TextFormField(
+              initialValue: producto.nombre,
+              decoration: CustomInputs.formInputDecoration(
+                hint: 'Referencia del Producto', 
+                label: 'Nombre', 
+                icon: Icons.supervised_user_circle_outlined
+              ),
+              onChanged: ( value )=> productoFormProvider.copyProductoWith( nombre: value ),
+              validator: ( value ) {
+                if ( value == null || value.isEmpty ) return 'Ingrese la referencia del producto.';
+                if ( value.length < 2 ) return 'El nombre debe de ser de dos letras como mínimo.';
+                return null;
+              },
+            ),
+////////////////////////////////////////////////////////////////////////////////////////////
+            SizedBox( height: 20 ),
+////////////////////////////////////////////////////////////////////////////////////////////
+            TextFormField(
+              initialValue: producto.nombre,
+              decoration: CustomInputs.formInputDecoration(
+                hint: 'Referencia del Ariticulo', 
+                label: 'Correo', 
+                icon: Icons.mark_email_read_outlined
+              ),
+              onChanged: ( value )=> productoFormProvider.copyProductoWith( nombre: value ),
+              validator: ( value ) {
+                if ( value == null || value.isEmpty ) return 'Ingrese un nombre.';
+                if ( value.length < 2 ) return 'El nombre debe de ser de dos letras como mínimo.';
+                return null;
+              },
+            ),
+////////////////////////////////////////////////////////////////////////////////////////////
+            SizedBox( height: 20 ),
+////////////////////////////////////////////////////////////////////////////////////////////
+            ConstrainedBox(
+              constraints: BoxConstraints( maxWidth: 100 ),
+              child: ElevatedButton(
+                onPressed: () async {
+                  final saved = await productoFormProvider.updateProducto();
+                  if( saved ) {
+                   NotificationsService.showSnackbar('Usuario actualizado');
+                   Provider.of<ProductosProvider>(context, listen: false).refreshProducto( producto );
+                  } else {
+                    NotificationsService.showSnackbarError('No se pudo guardar');
+                  }
+                }, 
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all( Colors.indigo ),
+                  shadowColor: MaterialStateProperty.all( Colors.transparent ),
+                ),
+                child: Row(
+                  children: [
+                    Icon( Icons.save_outlined, size: 18 ),
+                    Text('Guardar')
+                  ],
+                )
+              ),
+            )
+////////////////////////////////////////////////////////////////////////////////////////////
+          ],
+        ),
+      )
+    
+    );
