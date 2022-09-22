@@ -35,7 +35,7 @@ void whatsAppOpen() async {
 
     if (whatsapp) {
       await FlutterLaunch.launchWhatsapp(
-          phone: "0573128956340", message: "Estoy interezado en un artículo de la tienda");
+          phone: "0573128956340", message: "Estoy interezado en un artículo de la tienda Marron");
     } else {
       throw 'No se puede lanzar el servicio';
     }
