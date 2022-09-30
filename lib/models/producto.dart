@@ -21,7 +21,7 @@ class Producto {
     String cantidad;
     String usuario;
     String precio;
-    Categoriap? categoria;
+    Categoriap categoria;
     String descripcion;
     String disponible;
     String? img;
@@ -56,7 +56,7 @@ class Producto {
         "cantidad": cantidad,
         "usuario": usuario,
         "precio": precio,
-        "categoria": categoria!.toMap(),
+        "categoria": categoria.toMap(),
         "descripcion": descripcion,
         "disponible": disponible,
         "img": img,
