@@ -4,6 +4,7 @@ class Producto {
     Producto({
         required this.id,
         required this.nombre,
+        required this.color,
         required this.genero,
         required this.cantidad,
         required this.usuario,
@@ -17,6 +18,7 @@ class Producto {
 
     String id;
     String nombre;
+    String color;
     String genero;
     String cantidad;
     String usuario;
@@ -36,6 +38,7 @@ class Producto {
           return Producto(
               id: json["_id"],
               nombre: json["nombre"],
+              color: json["color"],
               genero: json["genero"],
               cantidad: json["cantidad"],
               usuario: json["usuario"],
@@ -52,6 +55,7 @@ class Producto {
         
         "_id": id,
         "nombre": nombre,
+        "color":color,
         "genero": genero,
         "cantidad": cantidad,
         "usuario": usuario,

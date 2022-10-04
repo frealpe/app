@@ -71,7 +71,18 @@ class CardSwiper extends StatelessWidget {
                 posicion :value.counter,
                 productos: productos,
                 )
-              )                    
+              ),
+
+            /////////////////////////////////////
+            Positioned(
+              top: -1,
+              left: 0,
+              child: _ColorAvalible(
+                posicion :value.counter,
+                productos: productos,
+                )
+              ),
+
           ],
         ),
 
@@ -82,8 +93,8 @@ class CardSwiper extends StatelessWidget {
 
   BoxDecoration _cardBorders() => BoxDecoration(
 
-      color: Color.fromARGB(255, 124, 117, 117),
-      borderRadius: BorderRadius.circular(35),
+      color: Color.fromARGB(255, 90, 88, 88),
+      borderRadius: BorderRadius.circular(25),
       boxShadow: [
         BoxShadow(
           color:  Color.fromARGB(255, 66, 33, 12),
@@ -119,11 +130,11 @@ class _NotAvalible extends StatelessWidget {
           padding:EdgeInsets.symmetric(horizontal: 10),
           child: Text(categoria,
                           style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
+                          color: Color.fromARGB(255, 235, 227, 227),
                           fontSize: 8,
                           fontWeight: FontWeight.normal,
                           fontStyle: FontStyle.normal,
-                          shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
+                         // shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
                            
                           ),
           )
@@ -160,11 +171,11 @@ class _PriceTag extends StatelessWidget {
           padding:EdgeInsets.symmetric(horizontal: 10),
           child: Text(precio,
                           style: TextStyle(
-                          color: Color.fromARGB(255, 14, 14, 14),
+                          color: Color.fromARGB(255, 240, 236, 236),
                           fontSize: 6,
                           fontWeight: FontWeight.normal,
                           fontStyle: FontStyle.normal,
-                          shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
+                       //   shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
                            
                           ),
           )
@@ -211,11 +222,11 @@ class _productDetails extends StatelessWidget {
                   Text(
                     referencia,
                           style: TextStyle(
-                          color: Color.fromARGB(255, 10, 10, 10),
+                          color: Color.fromARGB(255, 247, 242, 242),
                           fontSize: 25,
                           fontWeight: FontWeight.normal,
                           fontStyle: FontStyle.normal,
-                          shadows:[Shadow(color:Color.fromARGB(135, 54, 39, 39), offset:Offset(1,2), blurRadius: 4 ) ]
+                         // shadows:[Shadow(color:Color.fromARGB(135, 54, 39, 39), offset:Offset(1,2), blurRadius: 4 ) ]
                            
                           ),
                     overflow: TextOverflow.ellipsis,
@@ -231,8 +242,49 @@ class _productDetails extends StatelessWidget {
 
   BoxDecoration _BuildboxDecoartion() => BoxDecoration(
     color:  Color.fromARGB(255, 158, 135, 121),
-    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),topRight: Radius.circular(25))
+    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(35),topRight: Radius.circular(25))
   );
+}
+//////////////////////////////////////////////////////////////////////
+class _ColorAvalible extends StatelessWidget {
+   final int posicion;
+   final List<Producto> productos;
+  const _ColorAvalible({ 
+    Key? key, 
+    required this.posicion, 
+    required this.productos, 
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final value = Provider.of<CounterProvider>(context);    
+    final color = productos[value.counter].precio;
+    return Container(
+      child: FittedBox(
+        fit: BoxFit.contain,
+        child: Padding(
+          padding:EdgeInsets.symmetric(horizontal: 10),
+          child: Text(color,
+                          style: TextStyle(
+                          color: Color.fromARGB(255, 240, 236, 236),
+                          fontSize: 6,
+                          fontWeight: FontWeight.normal,
+                          fontStyle: FontStyle.normal,
+                       //   shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
+                           
+                          ),
+          )
+          ),
+      ),
+      width:  150,      
+      height: 65,
+      decoration: BoxDecoration(
+        color:  Color.fromARGB(255, 165, 129, 107),
+        borderRadius: BorderRadius.only(topRight:Radius.circular(25),bottomLeft: Radius.circular(25) )
+      ),
+
+    );
+  }
 }
 ///////////////////////////////////////////////////////////////////
 class _Deslizartarjeta extends StatelessWidget {

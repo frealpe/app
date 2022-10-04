@@ -29,6 +29,7 @@ late GlobalKey<FormState> formKey;
 copyProductoWith({
     String? id,
     String? nombre,
+    String? color,
     String? genero,
     String? cantidad,
     String? usuario,
@@ -42,6 +43,7 @@ copyProductoWith({
     producto = Producto(
       id: id ?? producto!.id,
       nombre: nombre ?? producto!.nombre,
+      color: color ?? producto!.color,
       genero: genero ?? producto!.genero,
       cantidad: cantidad ?? producto!.cantidad,
       usuario: usuario ?? producto!.usuario,
@@ -53,6 +55,7 @@ copyProductoWith({
     );
     notifyListeners();
 }
+///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
   bool _validForm() {
     return formKey.currentState!.validate();
@@ -67,7 +70,7 @@ copyProductoWith({
       'genero': producto!.genero,
       'precio': producto!.precio,
       'cantidad': producto!.cantidad,
-      'categoria': producto!.categoria!.id,  //Se debe actualizar el id de la categoria.
+      'categoria': producto!.categoria.id,  //Se debe actualizar el id de la categoria.
       'descripcion': producto!.descripcion,
       'disponible': producto!.disponible,
     };
@@ -94,7 +97,7 @@ copyProductoWith({
       'genero': producto!.genero,
       'precio': producto!.precio,
       'cantidad': producto!.cantidad,
-      'categoria': producto!.categoria!.id,  //Se debe actualizar el id de la categoria.
+      'categoria': producto!.categoria.id,  //Se debe actualizar el id de la categoria.
       'descripcion': producto!.descripcion,
       'disponible': producto!.disponible,
     };

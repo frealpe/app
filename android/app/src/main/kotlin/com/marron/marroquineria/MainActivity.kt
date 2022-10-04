@@ -1,4 +1,4 @@
-package com.example.admin_dashboard
+package com.marron.marroquineria
 
 import io.flutter.embedding.android.FlutterActivity
 

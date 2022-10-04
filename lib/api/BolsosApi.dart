@@ -9,14 +9,14 @@ class BolsosApi{
   static Dio dio =  Dio();
 
 
-  static var baseUrlu=  'https://backend-marron.herokuapp.com/api';
+  static var baseUrlu=  'https://marronmarroquineria.herokuapp.com/api';
 
   //static var baseUrlu=  'http://localhost:8080/api';
   
   static void configureDio(){
 
    
-    dio.options.baseUrl= 'https://backend-marron.herokuapp.com/api';
+    dio.options.baseUrl= 'https://marronmarroquineria.herokuapp.com/api';
     //    dio.options.baseUrl= 'http://localhost:8080/api';
 
 

@@ -1,3 +1,4 @@
+import 'package:admin_dashboard/widgets/Background.dart';
 import 'package:admin_dashboard/widgets/categories_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_launch/flutter_launch.dart';
@@ -23,7 +24,7 @@ const DashboardView({Key? key}) : super(key: key);
         ),
       body: Stack(
         children: [
-        //Background(),
+         Background(),
         _HomeBody()
         ],
       ),    

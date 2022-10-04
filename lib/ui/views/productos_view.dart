@@ -74,17 +74,18 @@ class _Informacion extends StatelessWidget {
           'Descripción General del Artículo:',
           style: TextStyle(
           color: Color.fromARGB(255, 17, 17, 17),
-                fontSize: 30,
+                fontSize: 20,
                 fontWeight: FontWeight.normal,
                 fontStyle: FontStyle.normal,
                 shadows:[Shadow(color:Color.fromARGB(136, 78, 75, 75), offset:Offset(1,2), blurRadius: 4 ) ]
           )          
           ),
+          SizedBox(height: 10),
         Text(
           '${producto.descripcion}',
           style: TextStyle(
           color: Color.fromARGB(255, 17, 17, 17),
-                fontSize: 24,
+                fontSize: 18,
                 fontWeight: FontWeight.normal,
                 fontStyle: FontStyle.normal,
                 shadows:[Shadow(color:Color.fromARGB(137, 155, 148, 148), offset:Offset(1,2), blurRadius: 4 ) ]
@@ -127,7 +128,6 @@ class _Precio extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15), 
       child: Column(
         children:[
-
         Text(
           'Precio: \$ ${producto.precio} COP',
           style: TextStyle(

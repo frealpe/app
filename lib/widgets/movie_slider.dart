@@ -58,8 +58,9 @@ class _MovieSliderState extends State<MovieSlider> {
                       style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.normal,
+                            color: Color.fromARGB(255, 235, 227, 227),
                             fontStyle: FontStyle.normal,
-                            shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
+                           // shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
                         )
                         ),
                 ),
@@ -115,7 +116,7 @@ class _MovieCategoria extends StatelessWidget {
                           Text(
                           categoria.nombre,
                           style: TextStyle(
-                          color: Color.fromARGB(255, 116, 69, 9),
+                          color: Color.fromARGB(255, 218, 204, 187),
                           fontSize: 15,
                           fontWeight: FontWeight.normal,
                           fontStyle: FontStyle.normal,

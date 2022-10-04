@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class Background extends StatelessWidget {
@@ -24,7 +23,8 @@ class Background extends StatelessWidget {
         Positioned(
           top:-100,
           left: -30,
-          child:_cajaCafe() 
+          //child:_cajaCafe() 
+          child:Container()           
           )
         
 
