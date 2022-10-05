@@ -1,4 +1,5 @@
 import 'package:admin_dashboard/widgets/Background.dart';
+import 'package:admin_dashboard/widgets/custom_botton_navigation.dart';
 import 'package:admin_dashboard/widgets/categories_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_launch/flutter_launch.dart';
@@ -13,7 +14,7 @@ const DashboardView({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Pedidos: 3128956340'),
+            title: Text('Contacto: 3128956340'),
             elevation: 0,
             actions: [
               IconButton(
@@ -27,7 +28,10 @@ const DashboardView({Key? key}) : super(key: key);
          Background(),
         _HomeBody()
         ],
-      ),    
+        
+      ),
+  // CustomBottonNavigation();
+  bottomNavigationBar: CustomBottonNavigation(),
     );
   }
 

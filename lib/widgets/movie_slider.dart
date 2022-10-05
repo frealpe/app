@@ -95,6 +95,7 @@ class _MovieCategoria extends StatelessWidget {
                     height: 190,
                     margin: EdgeInsets.symmetric(horizontal: 15),
                     child: Column(
+                      crossAxisAlignment:CrossAxisAlignment.center,
                       children: [
                         GestureDetector(
                           //TODO HCAER LA NAVEGACION A TODOS LOS PRODUCTOS DE LA CATEGORIA ESCOGIDA
@@ -102,17 +103,19 @@ class _MovieCategoria extends StatelessWidget {
                               productosProvider.getProduCate(categoria.id);
                             }, 
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(25),
                             child: FadeInImage(
                             placeholder: AssetImage ('assets/no-image.jpg'),
                             image: NetworkImage(categoria.img!),     
-                            width: 130,
+                            width: 150,
                             height: 190,
-                            fit: BoxFit.cover),
+                            fit: BoxFit.fitHeight
+                            //fit: BoxFit.contain                            
+                            ),
                           ),
                         ),
 
-                        SizedBox(height: 5,),
+                        SizedBox(height: 1,),
                           Text(
                           categoria.nombre,
                           style: TextStyle(
@@ -120,7 +123,7 @@ class _MovieCategoria extends StatelessWidget {
                           fontSize: 15,
                           fontWeight: FontWeight.normal,
                           fontStyle: FontStyle.normal,
-                          shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
+//                          shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
                            
                           ),
                           maxLines: 2,

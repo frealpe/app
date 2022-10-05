@@ -23,7 +23,7 @@ class CategoriesView extends StatelessWidget {
             productos:productosProvider.productos            
             ),
 ////////////////////////////////////////////////////////////
-            SizedBox( height: 30 ), 
+            SizedBox( height: 14), 
 ////////////////////////////////////////////////////////////            
             MovieSlider(
             categoria: categoriaProvider.categorias,

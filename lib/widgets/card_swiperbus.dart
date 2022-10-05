@@ -16,7 +16,7 @@ class CardSwiperbus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       
-     final value = Provider.of<ProductosProvider>(context,);           
+     final value = Provider.of<ProductosProvider>(context);           
      final size = MediaQuery.of(context).size;
 
       if(productos.length ==0) {

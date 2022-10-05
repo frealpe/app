@@ -29,16 +29,12 @@ final Producto producto;
               child: IconButton(
                 onPressed: ()=> Navigator.of(context).pop(),
                 icon: Icon(
-                Icons.arrow_back_ios_new,size:40,
-                color:  Color.fromARGB(255, 66, 33, 12),
-                ) 
-                
-                )
-              ), 
-
-
- 
-                  ],
+                      Icons.arrow_back_ios_new,size:40,
+                      color:  Color.fromARGB(255, 66, 33, 12),
+                   )                 
+              )
+            ), 
+              ],
                 ),
                 _Informacion(producto: producto),  
                 _Precio(producto: producto),    
@@ -65,7 +61,7 @@ class _Informacion extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top:3,bottom:50,left: 10,right: 10),
       width: double.infinity, 
-      height: 180,
+      height: 150,
       decoration: _buildBoxDecoration(), 
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15), 
       child: Column(
@@ -77,10 +73,10 @@ class _Informacion extends StatelessWidget {
                 fontSize: 20,
                 fontWeight: FontWeight.normal,
                 fontStyle: FontStyle.normal,
-                shadows:[Shadow(color:Color.fromARGB(136, 78, 75, 75), offset:Offset(1,2), blurRadius: 4 ) ]
+//                shadows:[Shadow(color:Color.fromARGB(136, 78, 75, 75), offset:Offset(1,2), blurRadius: 4 ) ]
           )          
           ),
-          SizedBox(height: 10),
+          SizedBox(height:7),
         Text(
           '${producto.descripcion}',
           style: TextStyle(
@@ -123,7 +119,7 @@ class _Precio extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top:5,bottom:50,left: 10,right: 10),
       width: double.infinity, 
-      height: 80,
+      height: 70,
       decoration: _buildBoxDecoration(), 
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15), 
       child: Column(
@@ -135,7 +131,7 @@ class _Precio extends StatelessWidget {
                 fontSize: 24,
                 fontWeight: FontWeight.normal,
                 fontStyle: FontStyle.normal,
-                shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
+                //shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
             )          
           ),
         ]

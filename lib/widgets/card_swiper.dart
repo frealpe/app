@@ -47,7 +47,7 @@ class CardSwiper extends StatelessWidget {
 
 ////////////////////////////////////////////////////////                        
              Positioned(
-              top: size.height*0.55,
+              top: size.height*0.54,
               left: 0,
               child: _productDetails(
                 posicion :value.counter,
@@ -75,8 +75,8 @@ class CardSwiper extends StatelessWidget {
 
             /////////////////////////////////////
             Positioned(
-              top: -1,
-              left: 0,
+              top: size.height*0.54,
+              right: 0,
               child: _ColorAvalible(
                 posicion :value.counter,
                 productos: productos,
@@ -133,10 +133,10 @@ class _NotAvalible extends StatelessWidget {
                           color: Color.fromARGB(255, 235, 227, 227),
                           fontSize: 8,
                           fontWeight: FontWeight.normal,
-                          fontStyle: FontStyle.normal,
-                         // shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
-                           
+                          fontStyle: FontStyle.normal,                          
+                         // shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]                        
                           ),
+                  maxLines: 2,
           )
           ),
       ),
@@ -178,6 +178,7 @@ class _PriceTag extends StatelessWidget {
                        //   shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
                            
                           ),
+                maxLines: 2,
           )
           ),
       ),
@@ -242,7 +243,7 @@ class _productDetails extends StatelessWidget {
 
   BoxDecoration _BuildboxDecoartion() => BoxDecoration(
     color:  Color.fromARGB(255, 158, 135, 121),
-    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(35),topRight: Radius.circular(25))
+    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),topRight: Radius.circular(25))
   );
 }
 //////////////////////////////////////////////////////////////////////
@@ -258,7 +259,7 @@ class _ColorAvalible extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final value = Provider.of<CounterProvider>(context);    
-    final color = productos[value.counter].precio;
+    final color = productos[value.counter].color;
     return Container(
       child: FittedBox(
         fit: BoxFit.contain,
@@ -273,6 +274,8 @@ class _ColorAvalible extends StatelessWidget {
                        //   shadows:[Shadow(color:Color.fromARGB(136, 15, 15, 15), offset:Offset(1,2), blurRadius: 4 ) ]
                            
                           ),
+
+                                                    maxLines: 2,
           )
           ),
       ),
@@ -280,7 +283,7 @@ class _ColorAvalible extends StatelessWidget {
       height: 65,
       decoration: BoxDecoration(
         color:  Color.fromARGB(255, 165, 129, 107),
-        borderRadius: BorderRadius.only(topRight:Radius.circular(25),bottomLeft: Radius.circular(25) )
+        borderRadius: BorderRadius.only(topLeft:Radius.circular(25),bottomRight: Radius.circular(25))
       ),
 
     );
@@ -329,8 +332,8 @@ class _Deslizartarjeta extends StatelessWidget {
                 child: FadeInImage(          
                   placeholder: AssetImage ('assets/no-image.jpg'),
                   image: NetworkImage(producto.img!),                
-                  fit: BoxFit.cover,
-                  
+//                  fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
               ),
               ),
@@ -343,7 +346,7 @@ class _Deslizartarjeta extends StatelessWidget {
 
   BoxDecoration _cardBorders() => BoxDecoration(
       color: Color.fromARGB(255, 196, 191, 191),
-      borderRadius: BorderRadius.circular(19),
+      borderRadius: BorderRadius.circular(25),
       boxShadow: [
         BoxShadow(
           color:  Color.fromARGB(255, 110, 98, 98),
